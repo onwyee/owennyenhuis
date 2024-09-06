@@ -1,0 +1,256 @@
+/* General reset */
+body, html {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: "Times New Roman", sans-serif;
+    background: linear-gradient(100deg, #fd8600, black);
+    color: white;
+}
+
+/* Banner */
+.banner {
+    max-height: 15vh; /* Set max height for the banner */
+    overflow: hidden; /* Hide any overflowing content */
+}
+
+.banner img {
+    width: 100%; /* Ensure the image fills its container */
+    height: auto; /* Allow the image to adjust its height according to its aspect ratio */
+    display: block; /* Ensure the image behaves as a block element */
+}
+
+/* Navigation */
+.nav{
+    padding: none;
+    width: 97vw;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #404040;
+    color: #000000;
+    padding: 1% 4%;
+    height: 10vh;
+    font-size: 3vh;
+}
+
+.personal-logo {
+    height: 10vh;
+    object-fit: contain; /* Ensures the image maintains its aspect ratio */
+}
+
+.left-wrapper {
+    padding: 0% 4%;
+    flex: 1;
+}
+
+.right-wrapper a {
+    font-weight: bold;
+    text-decoration: none;
+    color: #FFFFFF;
+    margin-left: 2vw; /* Use viewport-relative margin to scale with page width */
+    font-size: 1.5vw; /* Adjust font size based on viewport width */
+    height: auto; /* Allow height to adjust based on content */
+    white-space: nowrap; /* Prevent the links from wrapping into multiple lines */
+}
+
+.right-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Align links to the right */
+    flex-wrap: wrap; /* Allow the links to wrap if necessary */
+}
+
+
+.linkedin-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #FFFFFF;
+    margin-left: 1vw;
+}
+
+.linkedin-image-container {
+    width: 5vw;
+    height: 5vh; 
+    background-image: url("/static/main/images/social-linkedin.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* Media queries */
+@media screen and (max-width: 650px) {
+    .right-wrapper a:not(.link) {
+        display: none; /* Hide the other links */
+    }
+
+    .link {
+        display: block; /* Show the menu bar */
+        width: 5vw;
+        height: 5vh;
+        background-image: url("/static/main/images/menu-bar.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        
+    }
+    .right-wrapper {
+        padding: 0% 3.2%;
+    }
+    .dropdown.active > .link + .dropdown-menu {
+        opacity: 1;
+        transform: translateY(0%);
+        pointer-events: auto;
+    }
+    .content-row {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        max-width: 80vw;
+        max-height: 50vh;
+    }
+    .left-column, .right-column {
+        max-height: 50vh;
+    }
+}
+
+.right-wrapper a:hover ,.link:hover,.dropdown-menu>a:hover{
+    opacity: 0.5;
+    font-size: 2vw;
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+}
+
+.dropdown button {
+    background-color: #404040;
+    border: none;
+}
+
+.dropdown a {
+    display: block;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: .75rem;
+}
+
+.dropdown-menu {
+    position: absolute;
+    right: 0%;
+    top: calc(100% + .25rem);
+    background-color: #404040;
+    padding: .75rem;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10%);
+    transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+}
+
+
+.main-content {
+    text-align: justify;
+}
+
+/* Center everything outside of content-rows */
+.fun-fact, 
+.project-list-title, 
+.more-center {
+    max-width: 80vw; /* Limit the maximum width to 80% of viewport width */
+    margin: 0% auto; /* Center the element horizontally */
+    text-align: center; /* Center the text within the element */
+}
+
+/* Left column */
+.left-column {
+    height: auto;
+    overflow: hidden;
+}
+
+.left-column > img {
+    border: 0.2em solid #000000;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Right column */
+.right-column {
+    flex-direction: column;
+    margin: 0% 2%;
+    overflow: auto;
+}
+
+/* Content row */
+.content-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    max-width: 80vw;
+    max-height: 70vh;
+    margin: 2% auto;
+}
+
+/* Footer */
+footer {
+    font-weight: bold;
+    background-color: #404040;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 3% 0%;
+}
+
+.feedback-form {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #404040;
+    padding: 2%;
+    z-index: 9999;
+    color:white;
+}
+
+#toggle-feedback {
+    background-color: #404040;
+    color: #FFFFFF;
+    position: fixed;
+    top: 50%;
+    right: 0vh; /* Adjusted to align with the right side */
+    transform: translateY(100%); /* Makes button stick to right side */
+    rotate: -90deg;
+    z-index: 9999;
+}
+
+.feedback-form input[type="text"], .ta{
+    width:98%;
+    padding: 0;
+    margin:0;
+}
+
+
+.feedback-form input[type="submit"] {
+    width: 100%;
+    height: 5vh;
+    background-color: #8f8f8f;
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    padding: 0;
+    margin:0;
+}
+
+.feedback-form input[type="submit"]:hover {
+    color: #8f8f8f;
+    background-color: #FFFFFF;
+}
+
+h5, .ta {
+    padding: 0;
+    margin:0;
+}

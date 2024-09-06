@@ -1,0 +1,49 @@
+{% extends 'shared/layout.html' %}
+
+{% block extracss %}
+<link rel="stylesheet" href="{{ url_for('static', filename='piano/css/piano.css') }}">
+{% endblock %}
+
+{% block maincontent %}
+<div class="more-center">
+    <!-- Introduction -->
+    <br>
+    <em>Behold piano great and old, it's master slumbers in far off cold, If you wish to see anew, call out to it - we see you. Hover your mouse over the keys to see keyboard inputs</em>
+    <br>
+    <br>
+    <hr>
+</div>
+
+<!-- Piano wrapper -->
+<div class="wrapper">
+    <br>
+    <div class="white_head">The Great Old One</div>
+    <div class="secret">I have awoken.</div>
+    <!-- Piano keys -->
+    <ul class="piano-keys">
+        <li class="key white" data-key="65"><span>A</span></li>
+        <li class="key black" data-key="87"><span>W</span></li>
+        <li class="key white" data-key="83"><span>S</span></li>
+        <li class="key black" data-key="69"><span>E</span></li>
+        <li class="key white" data-key="68"><span>D</span></li>
+        <li class="key white" data-key="70"><span>F</span></li>
+        <li class="key black" data-key="84"><span>T</span></li>
+        <li class="key white" data-key="71"><span>G</span></li>
+        <li class="key black" data-key="89"><span>Y</span></li>
+        <li class="key white" data-key="72"><span>H</span></li>
+        <li class="key black" data-key="85"><span>U</span></li>
+        <li class="key white" data-key="74"><span>J</span></li>
+        <li class="key white" data-key="75"><span>K</span></li>
+        <li class="key black" data-key="79"><span>O</span></li>
+        <li class="key white" data-key="76"><span>L</span></li>
+        <li class="key black" data-key="80"><span>P</span></li>
+        <li class="key white" data-key="186"><span>;</span></li>
+    </ul>
+</div>
+<br>
+
+{% endblock %}
+
+{% block extrajs %}
+<script src="{{ url_for('static', filename='piano/js/piano.js') }}" defer></script>
+{% endblock %}

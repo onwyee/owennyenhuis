@@ -1,0 +1,32 @@
+{% extends 'shared/layout.html' %}
+
+{% block maincontent %}
+      <div class="space"></div>
+      <!-- A block of content -->
+      <div class="content-row">
+        <div class="left-column">
+            <!-- Image -->
+            <img src="../static/main/images/owenpic.jpg" alt="Headshot of me" loading="lazy">
+        </div>
+        <div class="right-column">
+            <!-- Personal information -->
+            <h1>Hi, my name is Owen Nyenhuis</h1>
+            <p>
+                I am a highly ambitious and versatile software developer, passionate about contributing to a forward-thinking IT company that thrives on innovation and improving user experience. With a solid foundation in back-end development, I am equally enthusiastic about building intuitive mobile and desktop applications that deliver real value to users. My interest in cybersecurity allows me to integrate a security-first mindset to any project I take on.
+                <br><br>
+                What truly sets me apart is my creativity and meticulous attention to detail. Whether I am designing a user-friendly front-end design or architecting a database, I strive to infuse each project with precision and creativity. I have a natural curiosity that drives me to constantly seek out new challenges and learn emerging technologies. This curiosity fuels my problem-solving abilities, enabling me to approach complex challenges with fresh perspectives and devise creative solutions that others may not consider.
+                <br><br>
+                I’m a firm believer that every challenge is an opportunity to grow, both personally and professionally. I thrive in environments where I can take ownership of projects, collaborate with diverse teams, and contribute meaningfully to the success of an organization. My relentless drive to improve and push the limits of my skill set means that I am always looking for ways to refine my craft and deliver work that exceeds expectations.
+                <br><br>
+                In addition to technical expertise, I pride myself on being adaptable and open to taking on diverse roles. Whether it’s backend systems, mobile development, desktop applications, or exploring new areas like cloud computing and cybersecurity, I am ready to embrace any opportunity that allows me to expand my knowledge and prove my value.
+                <br><br>
+                I am incredibly eager to prove myself to the next company that gives me the opportunity, and I look forward to demonstrating my unique combination of skills, creativity, and drive. For me, the journey of continuous learning and growth is irreplaceable, and I am excited to bring that passion to a new team where I can make an impact.
+            </p>
+        </div>
+      </div>
+
+      <!-- Another block of content -->
+      <div class="fun-fact"><br><hr><p>A fun fact about me: {{fun_fact}}</p><hr></div>
+{% endblock %}
+
+

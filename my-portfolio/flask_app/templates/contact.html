@@ -1,0 +1,62 @@
+{% extends 'shared/layout.html' %}
+
+{% block extracss %}
+<link rel="stylesheet" href="{{ url_for('static', filename='main/css/main.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='contact/css/contact.css') }}">
+{% endblock %}
+
+{% block maincontent %}
+
+<!-- Title -->
+
+<div class="content-row">
+    <div class="left-column">
+        <h1>Hi there!</h1>
+        <h4>
+            I am interested in freelance opportunities - especially on ambitious
+            or large projects that require a lot of attention to detail. However, if you have any other requests or
+            questions, don't hesitate to contact me using the form to the right or the email link below.
+        </h4>
+        <h2>My info:</h2>
+        <p>
+            Owen Nyenhuis,
+            <br/>
+            United States,
+            <br/>
+            6210 Abbot Rd. <br/>
+            East Lansing, Michigan <br/>
+            owen.nyenhuis@gmail.com
+            <a href="mailto:owen.nyenhuis@gmail.com">Email Me</a>
+        </p>
+    </div>
+    <div class="right-column">
+        <h1>Contact form</h1>
+
+        <h3>Name</h3>
+        <input type="text" class="form-control" id="name" placeholder="Enter your name"/>
+
+        <h3>Email</h3>
+        <input type="email" class="form-control" id="email" placeholder="Enter your email"/>
+
+        <h3>Message</h3>
+        <textarea id="message" rows="3" class="form-control" placeholder="Enter your message"></textarea>
+        <br>
+        <button id="send_id" onclick="sendMail()">Submit</button>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block extrajs %}
+<script src="{{ url_for('static', filename='contact/js/contact.js') }}" defer></script>
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+    (function(){
+        emailjs.init({
+            publicKey: "ufBxUUdFjmFL_OUJ6",
+        });
+    })();
+</script>
+{% endblock %}

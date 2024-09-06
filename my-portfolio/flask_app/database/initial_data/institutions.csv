@@ -1,0 +1,6 @@
+"inst_id","type","name","department","address","city","state","zip"
+"1","Teaching","Computer Science Department MSU","","East Lansing","Michigan","48823"
+"2","Support","Plant Biology Labs MSU",None,"612 Wilson Road","East Lansing","Michigan","48823"
+"3","Restaurant","HopCat",None,"300 Grove Street","East Lansing","Michigan","48823"
+"4","Retail","Aldi",None,"571 E 24th Street","Holland","Michigan","49423"
+"5","Restaurant","Russ'",None,"361 E. 8th Street","Holland","Michigan","49423"

@@ -1,0 +1,13 @@
+/* .feedback main page */
+.feedback {
+    max-width: 80vw; 
+    height: 50vh;
+    margin: 2% auto; 
+    overflow-wrap: break-word; /* Ensuring long words are broken to fit within container */
+    overflow: auto;
+}
+
+/* Centers top message */
+.message {
+    text-align: center;
+}

@@ -1,0 +1,69 @@
+{% extends 'shared/layout.html' %}
+
+{% block extracss %}
+<link rel="stylesheet" href="{{ url_for('static', filename='resume/css/resume.css') }}">
+{% endblock %}
+
+{% block maincontent %}
+<div class="resume">
+    Here is a pdf link to my resume: <a href="/static/main/Owen_Nyenhuis_Resume.pdf" title="Owen's Resume">Resume</a>
+    <hr>
+    {% for inst_id, inst in resume_data.items() %}
+    <div class="first-line-wrap">
+        <!-- Institution name and location -->
+        <h2 class="institution">{{ inst['name'] }}</h2>
+        <p class="location">
+            {% if inst['department'] %}{{ inst['department'] }}, {% endif %}
+            {% if inst['address'] %}{{ inst['address'] }}{% endif %}
+            {% if inst['city'] %}{% if inst['address'] %}, {% endif %}{{ inst['city'] }}{% endif %}
+            {% if inst['state'] %}{% if inst['city'] %}, {% elif inst['address'] %}, {% endif %}{{ inst['state'] }}{% endif %}
+            {% if inst['zip'] %}, {{ inst['zip'] }}{% endif %}
+        </p>
+    </div>
+    <!-- Check if there are any positions for this institution -->
+    {% if inst['positions'] %}
+        <!-- Loop through each position -->
+        {% for pos_id, pos in inst['positions'].items() %}
+        <div class="second-line-wrap">
+            <!-- Position title and dates -->
+            <h3 class="position">{{ pos['title'] }}</h3>
+            <p class="dates">{{ pos['start_date'] }} - {% if pos['end_date'] %}{{ pos['end_date'] }}{% else %}Present{% endif %}</p>
+        </div>
+        <!-- Position responsibilities -->
+        <p>{{ pos['responsibilities'] }}</p>
+            <!-- Check if there are any experiences for this position -->
+            {% if pos['experiences'] %}
+                <ul>
+                    <!-- Loop through each experience -->
+                    {% for exp_id, exp in pos['experiences'].items() %}
+                        <li>
+                            <div class="experience">
+                                <!-- Check if there is a hyperlink for this experience -->
+                                {% if exp['hyperlink'] %}<a href="{{ exp['hyperlink'] }}">{% endif %}
+                                <!-- Experience name and description -->
+                                {{ exp['name'] }}
+                                {% if exp['hyperlink'] %}</a>{% endif %}: {{ exp['description'] }}
+                                <!-- Check if there are any skills for this experience -->
+                                {% if exp['skills'] %}
+                                    <div class="skills">
+                                        <p>Skills used:
+                                            <!-- Loop through each skill -->
+                                            {% for skill_id, skill in exp['skills'].items() %}
+                                                {{ skill['name'] }}{% if not loop.last %}, {% endif %}
+                                            {% endfor %}
+                                        </p>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    <!-- End of each institution -->
+    <hr>
+    {% endfor %}
+
+</div>
+{% endblock %}

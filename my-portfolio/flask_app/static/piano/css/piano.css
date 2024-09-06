@@ -1,0 +1,88 @@
+.white_head,
+.wrapper.active .secret {
+    display: block;
+    color: #FFFFFF;
+    font-size: 5vw;
+    max-width: 80vw; /* Limit the maximum width to 80% of viewport width */
+    margin: 0% auto; /* Center the element horizontally */
+    text-align: center; /* Center the text within the element */
+}
+
+.secret {
+    display: none;
+}
+.wrapper {
+    border-radius: 5%;
+    background: #000000;
+    width: 80%;
+    margin: 0% auto;
+}
+
+.wrapper.active {
+    background-image: url("/static/piano/images/texture.jpeg");
+    background-size: cover; /* Ensure the background image covers the entire element */
+    background-position: center; /* Center the background image horizontally and vertically */
+    height: 80vh;
+}
+
+.wrapper.active .piano-keys,
+.wrapper.active .white_head {
+    display: none;
+}
+
+.piano-keys .key {
+    cursor: none;
+    list-style: none;
+    color: #808080;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.piano-keys {
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+    padding: 4%;
+}
+
+.piano-keys .black {
+    width: 4%;
+    height: 25vh;
+    margin: 0% -2%;
+    z-index: 2;
+    border-radius: 0% 0% 7% 7%;
+    background: linear-gradient(#333333, #000000);
+}
+
+.piano-keys .black.active {
+    background: linear-gradient(to bottom, #000000, #434343);
+}
+
+.piano-keys .white {
+    width: 8%; /* Changed to percentage */
+    height: 40vh;
+    border-radius: 8%;
+    border: 0.1em solid #000000;
+    background: linear-gradient(#ffffff 96%, #eeeeee 4%);
+}
+
+.piano-keys .white.active {
+    background: linear-gradient(to bottom, #4f4a4a 0%, #eeeeee 100%);
+}
+
+.piano-keys span {
+    position: absolute;
+    bottom: 10%;
+    width: 100%;
+    font-size: 1.13rem;
+    text-align: center;
+}
+
+.piano-keys .key span {
+    display: none; /* hide letters by default */
+}
+
+.piano-keys:hover span {
+    display: block; /* show letters on hover */
+}

@@ -1,0 +1,71 @@
+/* Styles for the resume section */
+.resume {
+    max-width: 80vw; /* Restricting width to 80% of viewport width */
+    margin: 2% auto; /* Centering the resume section vertically and horizontally */
+    overflow-wrap: break-word; /* Allowing long words to break into new lines */
+    overflow: auto;
+    background-color: black;
+    padding: 1%;
+}
+
+/* Styles for the first line wrap */
+.first-line-wrap {
+    display: flex; /* Using flexbox for layout */
+    justify-content: space-between; /* Distributing items evenly along the main axis */
+    align-items: baseline; /* Aligning items to the baseline */
+}
+
+/* Styles for the second line wrap */
+.second-line-wrap {
+    display: flex; /* Using flexbox for layout */
+    justify-content: space-between; /* Distributing items evenly along the main axis */
+}
+
+/* Styles for institution name */
+.institution {
+    text-align: left; /* Aligning text to the left */
+    margin: 0%; /* Resetting margin */
+    white-space: nowrap; /* prevent institution from creating newline*/
+}
+
+/* Styles for location */
+.location {
+    text-align: right; /* Aligning text to the right */
+    margin: 0%; /* Resetting margin */
+    margin-bottom: 2%; /* Adding bottom margin */
+    white-space: nowrap; /* prevent location from creating newline*/
+}
+
+
+/* Styles for position */
+.position {
+    text-align: left; /* Aligning text to the left */
+    color: #47fdfd; /* Applying grey color */
+    margin: 0%; /* Resetting margin */
+}
+
+/* Styles for dates */
+.dates {
+    text-align: right; /* Aligning text to the right */
+    margin: 0%; /* Resetting margin */
+}
+
+/* Styles for skills */
+.skills {
+    font-size: 70%; /* Reducing font size for skills */
+}
+
+/* Media query adjustments for smaller screens */
+@media screen and (max-width: 650px) {
+    .first-line-wrap,
+    .second-line-wrap {
+        flex-direction: column; /* Changing flex direction to column for smaller screens */
+    }
+    
+    .position,
+    .dates {
+        text-align: left; /* Aligning text to the left */
+    }
+    
+}
+

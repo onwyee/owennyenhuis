@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Personal Webpage">
+    <meta name="keywords" content="HTML,CSS,Javascript">
+    <meta name="author" content="Owen Nyenhuis">
+    <title>Owen Nyenhuis' personal page(projects/resume/and more!)</title>
+
+    <!-- Open Graph tags -->
+    <meta property="og:image" content="/static/main/images/banner.jpg">
+    <meta property="og:description" content="Owen's digital webpage! Explore my passions, projects, and perspectives all in one place.">
+    <meta property="og:title" content="Owen Nyenhuis' Webpage">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="static/main/images/favicon.ico">
+
+    <!-- External CSS files -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='main/css/main.css') }}">
+    {% block extracss %}{% endblock %}
+</head>
+<body>
+<article>
+    <!-- Header -->
+    <header>
+        <div class="banner">
+            <img src="../static/main/images/banner.jpg" alt="Banner Image" loading="lazy">
+        </div>
+    </header>
+
+    <!-- Navigation bar -->
+    <nav>
+        <div class="navbar">
+            <div class="left-wrapper">
+                <img src="../static/main/images/personal-logo2.png" alt="Personal Logo" class="personal-logo" loading="lazy">
+            </div>
+            <!-- Dropdown menu -->
+            <div class="dropdown" data-dropdown>
+                <button class="link" data-dropdown-button></button>
+                <div class="dropdown-menu">
+                    <!-- Dropdown links -->
+                    <a href="/home" title="Owen's Homepage">Home</a>
+                    <a href="/projects" title="Owen's Projects">Projects</a>
+                    <a href="/resume" title="Owen's Resume">Resume</a>
+                    <a href="/contact" title="Contact">Contact</a>
+                    <a href="https://www.linkedin.com/in/owen-nyenhuis-8023292b6/" title="Owen's LinkedIn">LinkedIn</a>
+                </div>
+            </div>
+            <!-- Right navigation links -->
+            <div class="right-wrapper">
+                <a href="/home" title="Owen's Homepage">Home</a>
+                <a href="/projects" title="Owen's Projects">Projects</a>
+                <a href="/resume" title="Owen's Resume">Resume</a>
+                <a href="/contact" title="Contact">Contact</a>
+                <a href="https://www.linkedin.com/in/owen-nyenhuis-8023292b6/" title="Owen's LinkedIn" class="linkedin-link">
+                    <div class="linkedin-image-container"></div>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main content -->
+    <main>
+        {% block maincontent %}{% endblock %}
+        <form class="feedback-form" action="/processfeedback" method="POST" enctype="multipart/form-data">
+            <h1>Feedback form</h1>
+            <h5>Name</h5>
+            <input type="text" name="name" placeholder="Your Name" title="Please enter your full name"><br>
+            <h5>Email</h5>
+            <input type="text" name="email" placeholder="Your Email" title="Please enter a valid email address"><br>
+            <h5>Feedback</h5>
+            <textarea class="ta" name="comment" placeholder="Insert Feedback here" title="Please provide your feedback"></textarea><br>
+            <input type="submit" value="SEND" title="Send feedback to author">
+        </form>
+        <button id="toggle-feedback">Feedback</button>
+    </main>
+    <!-- Footer -->
+    <footer>
+        <p>© Owen Nyenhuis</p>
+    </footer>
+</article>
+
+<!-- JavaScript files -->
+<script src="{{ url_for('static', filename='main/js/main.js') }}" defer></script>
+{% block extrajs %}{% endblock %}
+</body>
+</html>
